@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
 
 export const useFormPersistence = () => {
-  const [formData, setFormData] = useState(() => {
-    // Load data from localStorage on mount
-    const savedFormData = localStorage.getItem("formData");
-    return savedFormData ? JSON.parse(savedFormData) : { 
-      name: "", email: "", about: "", image: "" 
-    };
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    about: "",
+    image: "",
   });
-  
   const [errorMessage, setErrorMessage] = useState({
     name: "",
     email: "",

@@ -24,8 +24,6 @@ const App = () => {
   const { selectedTicket, setSelectedTicket, quantity, setQuantity } =
     useTicketSelection();
 
-  console.log(formData);
-
   const handleNext = () => {
     if (index === 1 && !selectedTicket) {
       return;
