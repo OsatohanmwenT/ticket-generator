@@ -7,7 +7,7 @@ const Navbar = () => {
             <div>
                 <img src={logo} alt="logo" />
             </div>
-            <ul className="flex items-center font-serif gap-3 text-white">
+            <ul className="hidden sm:flex items-center font-serif gap-3 text-white">
                 <li>
                     <a className="hover:text-light-green" href="#">Event</a>
                 </li>
