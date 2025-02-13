@@ -21,8 +21,11 @@
 }
 
 @layer components {
+    .bg-color{
+        @apply bg-dark-green bg-radial-[at_bottom] from-light-green/10 from-0% to-40% to-light-green/0;
+    }
     .main-container {
-        @apply min-h-screen p-4 flex justify-center items-center bg-dark-green bg-radial-[at_bottom] from-light-green/10 from-0% to-40% to-light-green/0;
+        @apply min-h-screen p-4 flex justify-center items-center;
     }
     .select-input {
         @apply border text-white border-light-green-100 text-sm rounded-lg focus:ring-light-green focus:border-light-green-100 block w-full p-2.5 bg-dark-green-200;

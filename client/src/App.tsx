@@ -8,6 +8,7 @@ import { useTicketSelection } from "./hooks/useTickSelection.tsx";
 import { validateFormData } from "../utils.ts";
 import TicketBooth from "./components/TicketBooth.tsx";
 import { ToastContainer } from 'react-toastify';
+import Navbar from "./components/Navbar.tsx";
 
 const App = () => {
   const [index, setIndex] = useState<number>(
@@ -71,56 +72,59 @@ const App = () => {
   }, [index]);
 
   return (
-    <main className="main-container">
-      <div className="px-2 py-5 xs:p-5 sm:p-8 w-[550px] border rounded-4xl flex flex-col font-roboto text-white gap-4 border-light-green-100 bg-dark-green-100">
-        <div className="flex gap-2 justify-between max-sm:flex-col">
-          <p className="text-2xl">{formTitle[index - 1]}</p>
-          <p>Step {index}/3</p>
-        </div>
-        <div className="flex relative overflow-hidden h-1 rounded-xl w-full bg-light-green-100">
+    <div className="bg-color">
+      <Navbar />
+      <main className="main-container relative">
+        <div className="px-2 py-5 xs:p-5 sm:p-8 w-[550px] border rounded-4xl flex flex-col font-roboto text-white gap-4 border-light-green-100 bg-dark-green-100">
+          <div className="flex gap-2 justify-between max-sm:flex-col">
+            <p className="text-2xl">{formTitle[index - 1]}</p>
+            <p>Step {index}/3</p>
+          </div>
+          <div className="flex relative overflow-hidden h-1 rounded-xl w-full bg-light-green-100">
+            <div
+              style={{ width: `${(index / 3) * 100}%` }}
+              className="absolute left-0 h-full rounded-xl transition-all duration-300 bg-light-green"
+            ></div>
+          </div>
           <div
-            style={{ width: `${(index / 3) * 100}%` }}
-            className="absolute left-0 h-full rounded-xl transition-all duration-300 bg-light-green"
-          ></div>
+            className={`form-container ${index === 3 ? "" : "border border-light-green-100 bg-dark-green-200"}`}
+          >
+            {index === 1 && (
+              <TicketSelection
+                quantity={quantity}
+                setQuantity={setQuantity}
+                selectedTicket={selectedTicket}
+                setSelectedTicket={setSelectedTicket}
+              />
+            )}
+            {index === 2 && (
+              <AttendeeDetails
+                formData={formData}
+                updateFormData={updateFormData}
+                errorMessage={errorMessage}
+              />
+            )}
+            {index === 3 && (
+              <TicketBooth
+                resetData={resetData}
+                quantity={quantity}
+                selectedTicket={selectedTicket}
+                name={formData.name}
+              />
+            )}
+            {index !== 3 && (
+              <ControlBtn
+                resetData={resetData}
+                index={index}
+                handleNext={handleNext}
+                ticketType={selectedTicket}
+              />
+            )}
+          <ToastContainer position="bottom-right" />
+          </div>
         </div>
-        <div
-          className={`form-container ${index === 3 ? "" : "border border-light-green-100 bg-dark-green-200"}`}
-        >
-          {index === 1 && (
-            <TicketSelection
-              quantity={quantity}
-              setQuantity={setQuantity}
-              selectedTicket={selectedTicket}
-              setSelectedTicket={setSelectedTicket}
-            />
-          )}
-          {index === 2 && (
-            <AttendeeDetails
-              formData={formData}
-              updateFormData={updateFormData}
-              errorMessage={errorMessage}
-            />
-          )}
-          {index === 3 && (
-            <TicketBooth
-              resetData={resetData}
-              quantity={quantity}
-              selectedTicket={selectedTicket}
-              name={formData.name}
-            />
-          )}
-          {index !== 3 && (
-            <ControlBtn
-              resetData={resetData}
-              index={index}
-              handleNext={handleNext}
-              ticketType={selectedTicket}
-            />
-          )}
-        <ToastContainer position="bottom-right" />
-        </div>
-      </div>
-    </main>
+      </main>
+    </div>
   );
 };
 

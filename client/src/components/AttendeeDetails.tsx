@@ -12,8 +12,8 @@ interface Props {
 const AttendeeDetails = ({ formData, updateFormData, errorMessage }: Props) => {
   return (
     <div className="form-container !gap-5">
+      <p className="mb-5 text-lg">Upload photo</p>
       <div className="form-head p-2 sm:p-4 !flex-nowrap flex-col">
-        <p className="mb-5 text-lg">Upload photo</p>
         <div className="w-full bg-dark-green px-3">
           <div className="relative aspect-square w-[180px] sm:w-[240px] mx-auto">
             <ImageUpload updateFormData={updateFormData} />
