@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&family=Road+Rage&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --color-dark-green: #02191D;
+    --color-dark-green-100: #041E23;
+    --color-dark-green-200: #08252B;
+    --color-dark-green-300: #052228;
+    --color-dark-green-400: #0E464F;
+
+    --color-light-green: #24A0B5;
+    --color-light-green-100: #0E464F;
+    --color-light-green-200: #07373F;
+    --color-light-green-300: #197686 ;
+
+    --color-dark: #0A0C11;
+
+    --font-road-rage: 'Road Rage', cursive;
+    --font-roboto: 'Roboto', sans-serif;
+    --font-alatsi: 'Alatsi', sans-serif;
+}
+
+@layer components {
+    .main-container {
+        @apply min-h-screen p-4 flex justify-center items-center bg-dark-green bg-radial-[at_bottom] from-light-green/10 from-0% to-40% to-light-green/0;
+    }
+    .select-input {
+        @apply border text-white border-light-green-100 text-sm rounded-lg focus:ring-light-green focus:border-light-green-100 block w-full p-2.5 bg-dark-green-200;
+    }
+    .ticket-card {
+        @apply bg-dark/10 bg-gradient-to-r p-4 rounded-3xl border-2 border-light-green-200 border-t-0 from-light-green/20 from-0% to-100% to-light-green/0;
+    }
+    .type-btn {
+        @apply p-2 border focus:bg-dark-green-400 hover:bg-light-green-200 transition-all cursor-pointer border-light-green-100 flex gap-3 rounded-xl text-white capitalize;
+    }
+    .btn {
+        @apply py-2 w-full border border-light-green hover:!bg-light-green-100 transition-all cursor-pointer rounded-md ;
+    }
+    .form-container {
+        @apply w-full flex flex-col gap-3 px-2 sm:p-5 rounded-4xl;
+    }
+    .form-head {
+        @apply flex flex-wrap gap-4 border-2 bg-dark-green-300 border-light-green-200  rounded-2xl
+    }
+    .upload-btn {
+        @apply bg-dark-green-400 hover:bg-light-green-200 ease-in transition-all cursor-pointer mx-auto flex p-4 flex-col gap-2 items-center justify-center rounded-4xl aspect-square w-[180px] sm:w-[240px];
+    }
+    .progress {
+        @apply rounded-full bg-green-800 p-0.5 mb-1 text-center font-road-rage text-[8px] font-bold leading-none text-white;
+      }
+}

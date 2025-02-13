@@ -1,0 +1,26 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Express backend for ticket-generator",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "ts-node index.ts",
+    "dev": "nodemon index.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.2",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "imagekit": "^6.0.0",
+    "nodemon": "^3.1.9"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "~5.7.2"
+  },
+  "author": "OsatohanmwenT",
+  "license": "ISC"
+}
