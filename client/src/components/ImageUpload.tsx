@@ -51,7 +51,7 @@ const ImageUpload = ({ updateFormData }: Props) => {
   const onSuccess = (res: any) => {
     setFile(res);
     updateFormData("image", res.url);
-    toast.success("An error occurred!", {
+    toast.success("Success!", {
       autoClose: 5000,
       position: "bottom-right",
       className: "!bg-dark-green-200",
