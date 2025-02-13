@@ -75,7 +75,7 @@ const App = () => {
       <main className="main-container relative">
         <div className="px-2 py-5 xs:p-5 sm:p-8 w-[550px] border rounded-4xl flex flex-col font-roboto text-white gap-4 border-light-green-100 bg-dark-green-100">
           <div className="flex gap-2 justify-between max-sm:flex-col">
-            <p className="text-2xl">{formTitle[index - 1]}</p>
+            <p className="text-2xl font-serif">{formTitle[index - 1]}</p>
             <p>Step {index}/3</p>
           </div>
           <div className="flex relative overflow-hidden h-1 rounded-xl w-full bg-light-green-100">

@@ -8,7 +8,7 @@ interface Props {
 const ControlBtn = ({ index, handleNext, ticketType, resetData }: Props) => {
   return (
     <div
-      className={`w-full ${index === 1 && "sm:bg-dark-green"} sm:px-5 sm:py-1 gap-2 rounded-3xl flex max-sm:flex-col items-center justify-evenly`}
+      className={`w-full ${index === 1 && "sm:bg-dark-green"} sm:px-5 sm:py-1 gap-2 font-serif rounded-3xl flex max-sm:flex-col items-center justify-evenly`}
     >
       <button onClick={resetData} className="btn max-sm:order-2">
         {index === 1 ? "Cancel" : "Back"}

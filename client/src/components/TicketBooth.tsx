@@ -33,7 +33,7 @@ const TicketBooth = ({ quantity, selectedTicket, name, resetData, image }: Props
           image={image}
         />
       </div>
-      <div className="px-4 flex max-sm:flex-col gap-4 rounded-4xl sm:border border-light-green-200 w-full">
+      <div className="px-4 font-serif flex max-sm:flex-col gap-4 rounded-4xl sm:border border-light-green-200 w-full">
         <button onClick={resetData} className="btn max-sm:order-2">
           Book Another Ticket
         </button>
