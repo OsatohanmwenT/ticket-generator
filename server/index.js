@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const imagekit_1 = __importDefault(require("imagekit"));
-const port = 3000;
+const port = "https://ticket-generator-5a50.onrender.com";
 const imagekit = new imagekit_1.default({
     urlEndpoint: "https://ik.imagekit.io/jsosato",
     publicKey: "public_BjM5CXpp54AiW/VGonnnFV84nW4=",

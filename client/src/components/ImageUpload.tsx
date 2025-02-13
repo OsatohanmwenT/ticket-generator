@@ -8,7 +8,7 @@ const publicKey = import.meta.env.VITE_IMAGEKIT_PUBLIC_KEY;
 
 const authenticator = async () => {
   try {
-    const response = await fetch("http://localhost:3000/auth");
+    const response = await fetch("https://ticket-generator-5a50.onrender.com/auth");
 
     if (!response.ok) {
       const errorText = await response.text();
