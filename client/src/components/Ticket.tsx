@@ -4,6 +4,7 @@ interface Props {
   quantity: string;
   selectedTicket: string;
   name: string;
+  image: string
 }
 
 const type: { [key: string]: ReactNode } = {
@@ -112,7 +113,7 @@ const type: { [key: string]: ReactNode } = {
   ),
 };
 
-const Ticket = ({ quantity, selectedTicket = "free", name }: Props) => {
+const Ticket = ({ quantity, selectedTicket = "free", name, image }: Props) => {
   return (
     <svg
       id="ticket-svg"
@@ -215,15 +216,20 @@ const Ticket = ({ quantity, selectedTicket = "free", name }: Props) => {
         </text>
         {type[selectedTicket]}
         <g filter="url(#filter0_d_5_1132)">
-          <rect
-            x="12.1121"
-            y="14.5344"
-            width="145.799"
-            height="141.711"
-            rx="6.81304"
-            fill="url(#pattern0_5_1132)"
-            shapeRendering="crispEdges"
-          />
+        <defs>
+        <pattern id="pattern0_5_1132" patternUnits="userSpaceOnUse" width="145.799" height="250.711">
+          <image xlinkHref={image} x="0" y="0" width="145.799" height="250.711" preserveAspectRatio="xMidYMid slice"/>
+        </pattern>
+      </defs>
+      <rect
+        x="12.1121"
+        y="14.5344"
+        width="145.799"
+        height="141.711"
+        rx="6.81304"
+        fill="url(#pattern0_5_1132)"
+        shapeRendering="crispEdges"
+      />
           <rect
             x="10.7495"
             y="13.1718"

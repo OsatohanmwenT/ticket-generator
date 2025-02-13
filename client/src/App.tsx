@@ -110,6 +110,7 @@ const App = () => {
                 quantity={quantity}
                 selectedTicket={selectedTicket}
                 name={formData.name}
+                image={formData.image}
               />
             )}
             {index !== 3 && (

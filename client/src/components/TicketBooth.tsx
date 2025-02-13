@@ -6,9 +6,10 @@ interface Props {
   selectedTicket: string;
   name: string;
   resetData: () => void;
+  image: string
 }
 
-const TicketBooth = ({ quantity, selectedTicket, name, resetData }: Props) => {
+const TicketBooth = ({ quantity, selectedTicket, name, resetData, image }: Props) => {
   const handleDownload = async () => {
     await document.fonts.ready;
     toImg("#ticket-svg", "ticket", { scale: 1, download: true })
@@ -29,6 +30,7 @@ const TicketBooth = ({ quantity, selectedTicket, name, resetData }: Props) => {
           quantity={quantity}
           selectedTicket={selectedTicket}
           name={name}
+          image={image}
         />
       </div>
       <div className="px-4 flex max-sm:flex-col gap-4 rounded-4xl sm:border border-light-green-200 w-full">
